@@ -352,7 +352,7 @@ solicitud.onsuccess = (event)=>{
 
     const transaccion = db.transaction(
         "lugares",
-        "readonly"
+        "readwrite"
     );
 
     const almacen = transaccion.objectStore(
@@ -363,7 +363,25 @@ solicitud.onsuccess = (event)=>{
 
     solicitudLectura.onsuccess = ()=>{
 
-        lugares = solicitudLectura.result;
+        if (solicitudLectura.result.length > 0) {
+            // IndexedDB guarda datos, pero no conserva los métodos de las clases.
+            lugares = solicitudLectura.result.map((registro) => {
+                const ClaseLugar = registro.tipo === "historico"
+                    ? LugarHistorico
+                    : LugarTuristico;
+
+                return new ClaseLugar(
+                    registro.id,
+                    registro.nombre,
+                    registro.direccion,
+                    registro.descripcion,
+                    registro.imagen
+                );
+            });
+        } else {
+            // Guardar las instancias iniciales cuando todavía no hay registros.
+            lugares.forEach((lugar) => almacen.add(lugar));
+        }
 
         console.log(lugares);
 
