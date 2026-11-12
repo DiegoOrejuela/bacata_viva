@@ -1,0 +1,26 @@
+# Configuracion local del IDE
+.idea/
+*.iml
+
+# Archivos del sistema operativo
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Dependencias locales de JavaScript
+node_modules/
+
+# Variables de entorno locales (conservar plantillas sin secretos)
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Registros y archivos temporales
+*.log
+*.tmp
+*.swp
+*.swo
+*~

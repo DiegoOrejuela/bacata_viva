@@ -1,0 +1,215 @@
+/*======================================
+ESTILOS GENERALES
+======================================*/
+
+body{
+
+    margin:0;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f4f4;
+
+}
+
+/*======================================
+ENCABEZADO
+======================================*/
+
+header{
+
+    background:#1B5E20;
+
+    color:white;
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+/*======================================
+CONTENIDO PRINCIPAL
+======================================*/
+
+main{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:30px auto;
+
+}
+
+/*======================================
+BUSCADOR
+======================================*/
+
+.busqueda{
+
+    margin-bottom:30px;
+
+}
+
+.busqueda input{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:18px;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+    box-sizing:border-box;
+
+}
+
+/*=====================================
+CONTENEDOR DE TARJETAS
+=====================================*/
+
+#lugares{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+    padding:30px;
+
+}
+
+.tarjeta{
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+
+}
+
+.tarjeta img{
+
+    width:100%;
+
+    height:200px;
+
+    object-fit:cover;
+
+}
+
+.tarjeta h3{
+
+    padding:15px;
+
+    color:#1B5E20;
+
+}
+
+.tarjeta p{
+
+    padding:0 15px 15px;
+
+}
+
+.tarjeta button{
+
+    margin:15px;
+
+    padding:10px 18px;
+
+    border:none;
+
+    background:#1B5E20;
+
+    color:white;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+.tarjeta button:hover{
+
+    background:#2E7D32;
+
+}
+
+/*=====================================
+DETALLE DEL LUGAR
+=====================================*/
+
+#detalle{
+
+    margin-bottom:30px;
+
+}
+
+.detalleLugar{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+
+    text-align:center;
+
+}
+
+.detalleLugar h2{
+
+    color:#1B5E20;
+
+}
+
+.detalleLugar img{
+
+    width:100%;
+
+    max-width:600px;
+
+    border-radius:10px;
+
+}
+
+.detalleLugar p{
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+.detalleLugar button{
+
+    padding:10px 20px;
+
+    border:none;
+
+    background:#1B5E20;
+
+    color:white;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+.detalleLugar button:hover{
+
+    background:#2E7D32;
+
+}
