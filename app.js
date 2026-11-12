@@ -74,10 +74,14 @@ class LugarTuristico {
     // Encapsulamiento
     #visitas = 0;
 
-    constructor(nombre, direccion) {
+    constructor(id, nombre, direccion, descripcion, imagen) {
 
+        this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.tipo = "turistico";
 
     }
 
@@ -92,22 +96,55 @@ class LugarTuristico {
 }
 
 //=====================================
+// HERENCIA
+//=====================================
+
+class LugarHistorico extends LugarTuristico {
+
+    constructor(id, nombre, direccion, descripcion, imagen) {
+
+        super(id, nombre, direccion, descripcion, imagen);
+        this.tipo = "historico";
+
+    }
+
+    // Polimorfismo
+    mostrar() {
+
+        console.log("Lugar histórico");
+        console.log(this.nombre);
+        console.log(this.direccion);
+
+    }
+
+}
+
+//=====================================
 // CREAR OBJETOS
 //=====================================
 
 let lugar1 = new LugarTuristico(
+    1,
     "Monserrate",
-    "Cerro Oriental"
+    "Cerro Oriental",
+    "Un lugar para disfrutar de una vista panorámica de Bogotá desde los cerros orientales.",
+    "imagenes/monserrate.png"
 );
 
-let lugar2 = new LugarTuristico(
+let lugar2 = new LugarHistorico(
+    2,
     "Museo del Oro",
-    "Centro"
+    "Centro de Bogotá",
+    "Un museo para conocer el trabajo en oro y la historia de las culturas prehispánicas de Colombia.",
+    "imagenes/museo_oro.png"
 );
 
-let lugar3 = new LugarTuristico(
+let lugar3 = new LugarHistorico(
+    3,
     "Plaza Bolívar",
-    "La Candelaria"
+    "La Candelaria",
+    "Una plaza del centro histórico rodeada de edificios representativos de Bogotá.",
+    "imagenes/plaza_bolivar.png"
 );
 
 //=====================================
@@ -125,40 +162,6 @@ console.log(lugar3);
 lugar1.mostrar();
 lugar2.mostrar();
 lugar3.mostrar();
-
-//=====================================
-// HERENCIA
-//=====================================
-
-class LugarHistorico extends LugarTuristico {
-
-    constructor(nombre, direccion) {
-
-        super(nombre, direccion);
-
-    }
-
-    // Polimorfismo
-    mostrar() {
-
-        console.log("Lugar histórico");
-        console.log(this.nombre);
-        console.log(this.direccion);
-
-    }
-
-}
-
-//=====================================
-// OBJETO DE LA CLASE HIJA
-//=====================================
-
-let museo = new LugarHistorico(
-    "Museo del Oro",
-    "Centro de Bogotá"
-);
-
-museo.mostrar();
 
 
 //=====================================
@@ -187,7 +190,7 @@ if ("serviceWorker" in navigator) {
 // ARREGLO DE LUGARES TURÍSTICOS
 //=====================================
 
-let lugares = [];
+let lugares = [lugar1, lugar2, lugar3];
 
 //=====================================
 // CONTENEDORES
