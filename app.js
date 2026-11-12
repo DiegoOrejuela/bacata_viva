@@ -344,6 +344,10 @@ solicitud.onupgradeneeded = (event)=>{
 
 };
 
+solicitud.onerror = () => {
+    console.warn("No se pudo abrir IndexedDB; se muestran los lugares iniciales.");
+};
+
 solicitud.onsuccess = (event)=>{
 
     const db = event.target.result;
