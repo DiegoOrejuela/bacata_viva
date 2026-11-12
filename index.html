@@ -1,54 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Bogota Explorando</title>
-
+    <meta name="description" content="De Bacatá a Santafé, descubre Bogotá. Explora sus cerros, su historia y los lugares que dan vida a la ciudad.">
+    <meta name="theme-color" content="#426E58">
+    <title>Bacatá Viva | De Bacatá a Santafé, descubre Bogotá</title>
     <link rel="stylesheet" href="style.css">
-
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/bacata-viva-32.png">
 </head>
-
 <body>
+    <a class="saltar-contenido" href="#explorar">Saltar a los lugares</a>
 
-<header>
+    <header class="encabezado">
+        <a class="marca" href="./" aria-label="Bacatá Viva, inicio">
+            <img src="icons/bacata-viva-192.png" alt="" width="52" height="52">
+            <span>Bacatá <strong>Viva</strong></span>
+        </a>
+        <a class="enlace-explorar" href="#explorar">Explorar Bogotá <span aria-hidden="true">↓</span></a>
+    </header>
 
-    <h1>Bogota Explorando</h1>
+    <section class="portada" aria-labelledby="titulo">
+        <img class="portada-imagen" src="imagenes/portada.jpeg" alt="Vista de Bogotá entre tejados coloniales y cerros al atardecer" width="1408" height="768" fetchpriority="high">
+        <div class="portada-contenido">
+            <p class="antetitulo">Una ciudad con raíces, una historia viva</p>
+            <h1 id="titulo">Bacatá Viva</h1>
+            <p class="eslogan">De Bacatá a Santafé, descubre Bogotá</p>
+            <p class="portada-descripcion">Entre cerros, calles y memorias, encuentra los lugares que hacen única a nuestra ciudad.</p>
+            <a class="boton-portada" href="#explorar">Comienza a explorar <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="portada-pie"><span aria-hidden="true">◈</span> Bogotá, Colombia</p>
+    </section>
 
-    <p>Información turística de Bogotá.</p>
+    <main id="explorar">
+        <div class="introduccion">
+            <div>
+                <p class="antetitulo">Descubre lo nuestro</p>
+                <h2>Una ciudad, mil formas de vivirla.</h2>
+                <p>12 lugares para descubrir la historia, la cultura y la naturaleza de Bogotá.</p>
+            </div>
+            <section class="busqueda" aria-label="Buscar lugares">
+                <label for="buscar">¿Qué lugar quieres descubrir?</label>
+                <div class="campo-busqueda">
+                    <span class="icono-busqueda" aria-hidden="true"></span>
+                    <input id="buscar" type="search" placeholder="Busca un lugar en Bogotá…" autocomplete="off">
+                </div>
+            </section>
+        </div>
+        <section id="lugares" aria-label="Lugares para descubrir"></section>
+    </main>
 
-</header>
-
-<main>
-
-    <section class="busqueda">
-
-    <input
-        type="text"
-        placeholder="Buscar lugares turísticos..."
-    >
-
-</section>
-
-<section id="detalle">
-
-</section>
-
-<section id="lugares">
-
-</section>
-
-</main>
-
-<script src="app.js"></script>
-
+    <footer class="pie-pagina">
+        <a class="marca" href="./" aria-label="Bacatá Viva, inicio">
+            <img src="icons/bacata-viva-192.png" alt="" width="40" height="40">
+            <span>Bacatá <strong>Viva</strong></span>
+        </a>
+        <p>De Bacatá a Santafé, descubre Bogotá</p>
+        <a href="#titulo">Volver arriba <span aria-hidden="true">↑</span></a>
+    </footer>
+    <dialog id="detalle" aria-labelledby="titulo-detalle">
+        <div class="detalleLugar">
+            <header class="modal-cabecera">
+                <div>
+                    <p class="antetitulo" id="categoria-detalle"></p>
+                    <h2 id="titulo-detalle"></h2>
+                </div>
+                <form method="dialog">
+                    <button id="cerrarDetalle" aria-label="Cerrar detalle" autofocus>
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </form>
+            </header>
+            <img id="imagen-detalle" alt="">
+            <div class="modal-informacion">
+                <p class="modal-ubicacion"><strong>Ubicación</strong><span id="direccion-detalle"></span></p>
+                <p id="descripcion-detalle"></p>
+            </div>
+        </div>
+    </dialog>
+    <script src="app.js"></script>
 </body>
-
 </html>

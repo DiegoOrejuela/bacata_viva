@@ -14,11 +14,22 @@ const urlsToCache = [
     "./style.css",
     "./app.js",
     "./manifest.json",
-    "./imagenes/monserrate.png",
-    "./imagenes/museo_oro.png",
-    "./imagenes/plaza_bolivar.png",
-    "./icons/icon-192.png",
-    "./icons/icon-512.png"
+    "./imagenes/Monserrate.jpg",
+    "./imagenes/Museo del Oro.jpeg",
+    "./imagenes/Plaza de Bolivar.jpeg",
+    "./imagenes/Biblioteca Virgilio Barco.jpeg",
+    "./imagenes/La Candelaria.jpeg",
+    "./imagenes/Teatro Colon.jpeg",
+    "./imagenes/Palacio Nariño.jpeg",
+    "./imagenes/Parque Simon Bolivar.jpeg",
+    "./imagenes/Parque Nacional.jpeg",
+    "./imagenes/Iglesia Lourdes.jpeg",
+    "./imagenes/El Campin.jpeg",
+    "./imagenes/Plazade Toros.jpeg",
+    "./icons/bacata-viva-32.png",
+    "./icons/bacata-viva-192.png",
+    "./icons/bacata-viva-512.png",
+    "./imagenes/portada.jpeg"
 ];
 
 //=====================================
@@ -78,7 +89,7 @@ self.addEventListener("fetch", (event)=>{
 self.addEventListener("push", (event)=>{
 
     self.registration.showNotification(
-        "Bogotá Explorando",
+        "Bacatá Viva",
         {
             body: "Hay nuevos lugares turísticos para explorar."
         }
